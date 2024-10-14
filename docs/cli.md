@@ -1,0 +1,1 @@
+The "ls" command in a command line interface lists all the files and directories in the current directory. It allows the user to view the contents of the directory they are currently working in The "cat" command in a command line interface is used to view the contents of a file.
