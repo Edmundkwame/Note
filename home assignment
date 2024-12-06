@@ -1,0 +1,78 @@
+SELECT * FROM rectangles;
+
+SELECT COUNT(*) AS total_rectangles FROM rectangles;
+
+SELECT color
+FROM rectangles
+ORDER BY width DESC
+LIMIT 1;
+
+SELECT color
+FROM rectangles
+ORDER BY height DESC
+LIMIT 1;
+
+SELECT *
+FROM rectangles
+WHERE width > height;
+
+SELECT id, width, height, (width * height) AS Area
+FROM rectangles;
+
+SELECT color
+FROM rectangles
+ORDER BY (width * height) DESC
+LIMIT 1;
+
+SELECT color
+FROM rectangles
+ORDER BY (x + width) DESC
+LIMIT 1;
+
+SELECT *
+FROM rectangles
+WHERE color IS NULL;
+
+SELECT DISTINCT color
+FROM rectangles;
+
+SELECT DISTINCT color
+FROM rectangles
+WHERE color IS NOT NULL
+AND NOT color REGEXP '^#[0-9A-Fa-f]{6}$';
+
+SELECT DISTINCT UPPER(color) AS color_uppercase
+FROM rectangles;
+
+SELECT course_id
+FROM courses
+ORDER BY LENGTH(course_name) DESC
+LIMIT 1;
+
+SELECT CONCAT(course_id, ': ', course_name) AS course_details
+FROM courses;
+
+SELECT course_id, course_name, lab_time
+FROM courses
+WHERE lab_schdule LIKE '%Monday%';
+
+SELECT * 
+FROM assignments
+WHERE due_date < CURRENT_DATE;
+
+SELECT course_id, COUNT(*) AS assignments_count
+FROM assignments
+GROUP BY course_id;
+
+SELECT semester, COUNT(*) AS assignments_count
+FROM assignments
+GROUP BY semester;
+
+SELECT color, SUBSTRING(color, 2, 2) AS red_component
+FROM rectangles
+WHERE color REGEXP '^#[0-9A-Fa-f]{6}$';
+        
+
+
+
+
